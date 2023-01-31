@@ -1,0 +1,8 @@
+name: "Actions on Issues"
+on: [issues]
+jobs:
+  get-triggered:
+    name: I'm Triggered
+    runs-on: ubuntu-latest
+    steps:
+      - echo "trigger warning"
