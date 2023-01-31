@@ -5,4 +5,4 @@ jobs:
     name: I'm Triggered
     runs-on: ubuntu-latest
     steps:
-      - echo "trigger warning"
+      - run: echo "trigger warning"
