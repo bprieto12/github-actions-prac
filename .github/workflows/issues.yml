@@ -8,6 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Creating Defect with title '$TITLE' and body '$DEFECT_BODY'"
-      env:
-        TITLE: {{ github.event.issues.title }}
-        DEFECT_BODY: {{ github.event.issues.body }}
+        env:
+          TITLE: {{ github.event.issues.title }}
+          DEFECT_BODY: {{ github.event.issues.body }}
