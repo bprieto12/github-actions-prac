@@ -7,7 +7,8 @@ jobs:
     name: Create Defect
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Creating Defect with title '$TITLE' and body '$DEFECT_BODY'"
+      - run: echo "Updating Defect with title '$TITLE', body '$DEFECT_BODY', and state '$STATE'"
         env:
-          TITLE: ${{ github.event.issues.title }}
-          DEFECT_BODY: ${{ github.event.issues.body }}
+          TITLE: ${{ github.event.issue.title }}
+          DEFECT_BODY: ${{ github.event.issue.body }}
+          STATE: ${{ github.event.issue.state }}
