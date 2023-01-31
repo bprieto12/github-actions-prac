@@ -1,4 +1,4 @@
-name: "Create Rally Defect"
+name: Create Rally Defect
 on: 
   issues:
     types: opened
