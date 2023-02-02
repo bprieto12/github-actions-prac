@@ -2,7 +2,18 @@ name: Hello, Github Actions!
 on: [push]
 jobs:
   build:
-    name: Hello, Github Actions!!
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello, world!"
+  test-custom-action:
+    name: Test Custom Action
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello world action step
+        id: hello
+        uses: ./.github/actions/custom-action
+        with:
+          who-to-greet: 'Attack Run'
+      - name: Get the output time
+        run: echo "The time was ${ steps.hello.output.time }}"
