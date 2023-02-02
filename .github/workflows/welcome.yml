@@ -10,6 +10,8 @@ jobs:
     name: Test Custom Action
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout action
+        uses:  actions/checkout@v2
       - name: Hello world action step
         id: hello
         uses: ./.github/actions/custom-action
