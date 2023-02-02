@@ -1,0 +1,11 @@
+name: Run make recipes
+on: 
+  pull_request:
+    type: open
+jobs:
+  test_make:
+    name: Test Makefile
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run:  make run
