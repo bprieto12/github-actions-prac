@@ -1,0 +1,25 @@
+name: Test Uploading Artifacts
+on: [push]
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create File
+        run: echo "Hello, artifacts!" > artifact.txt
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: ./
+  gather_artifacts:
+    name: Test Gather Artifacts
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Get artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: my-artifact
+      - name: Print contents of artifact
+        run: cat artifact.txt 
