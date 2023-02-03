@@ -3,9 +3,15 @@ on:
   issues:
     types: opened
 jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "building"
   create_defect:
     name: Create Defect
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - run: echo "Updating Defect with title '$TITLE', body '$DEFECT_BODY', and state '$STATE'"
         env:
