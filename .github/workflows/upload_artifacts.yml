@@ -22,4 +22,4 @@ jobs:
         with:
           name: my-artifact
       - name: Print contents of artifact
-        run: cat artifacts.txt 
+        run: cat artifact.txt 
